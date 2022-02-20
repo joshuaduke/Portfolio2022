@@ -1,0 +1,52 @@
+
+/* Individual Project */
+.project-card{
+    max-width: 400px;
+    width:100%;
+    background-color: #e4e4e4;
+    padding:10px 20px;
+    margin:10px 0;
+    border:1px solid #000;
+}
+
+hr{
+    background-color:#000;
+    height:2px;
+    border:none;
+}
+
+h3{
+    color:steelblue;
+    text-align: center;
+    padding-bottom:10px;
+}
+
+
+.project-card p{
+    text-align:center;
+    padding:10px 0;
+}
+
+.project-card a{
+    color: #000;
+}
+
+.project-links{
+    text-align: center;
+}
+
+.project-links a{
+    display: inline-block;
+    background-color: steelblue;
+    padding:3px 10px;
+    
+}
+
+
+
+/* Project Container */
+.project-Container{
+    width: 100%;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+}

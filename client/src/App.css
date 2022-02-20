@@ -1,0 +1,40 @@
+/* .App {
+  text-align: center;
+} */
+
+.App {
+  width: 85%;
+  margin:0 auto;
+}
+
+/* NAVBAR */
+nav{
+  padding:40px 0 0 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  margin: 0 10px ;
+}
+
+/* ABOUT */
+.aboutMe{
+  padding:40px 0;
+}
+
+.aboutMe h4{
+  font-weight:normal;
+  margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  padding:20px;
+  text-align: center;
+}
