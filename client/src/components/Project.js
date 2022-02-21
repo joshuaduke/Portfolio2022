@@ -10,13 +10,13 @@ export default function Project(props){
             </a>
             <ul className='project-links'>
                 <li>
-                    <a href='/'>Live</a>
+                    <a href={props.live} target="_blank" rel="noreferrer">Live</a>
                 </li>
                 <li>
-                    <a href='/'>Code</a>
+                    <a href={props.github} target="_blank" rel="noreferrer">Code</a>
                 </li>
                 <li>
-                    <a href='/'>Blog</a>
+                    <a href={props.blog} target="_blank" rel="noreferrer">Blog</a>
                 </li>
             </ul>
         </div>
