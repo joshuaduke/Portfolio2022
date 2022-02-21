@@ -1,0 +1,28 @@
+<%- include ('../partials/header') %> 
+    <a href="/projects">View Projects</a>
+    <p>add a new project </p>
+    <form action="/projects" method="post">
+        <label for="">Project Name</label>
+        <input type="text" name="name" id="name"  required>
+        <br />
+        <label for="">Project Description</label>
+        <textarea name="desc" id="desc" cols="30" rows="10" required></textarea>
+        <br />
+        <label for="">GitHub Repo Link</label>
+        <input type="text" name="githubLink" id="githubLink" required>
+        <br />
+        <label for="">Live Webiste Link</label>
+        <input type="text" name="liveLink" id="liveLink">
+        <br />
+        <label for="">Blog Post Link</label>
+        <input type="text" name="blogLink" id="blogLink">
+        <br />
+        <label for="">Tags (Seperated by comma)</label>
+        <textarea name="tags" id="tags" cols="30" rows="10" ></textarea>
+        <button type="submit">Save</button>
+
+        <a href="/">Cancel</a>
+    </form>
+
+
+    <%- include ('../partials/footer') %> 

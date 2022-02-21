@@ -1,0 +1,32 @@
+<%- include ('../partials/header') %> 
+<a href="/projects">View Projects</a>
+<p>add a new project </p>
+
+<form action="/projects/<%= data.id %>?_method=PATCH" method="post">
+    <label for="">Project Name</label>
+    <input value="<%= data.title %>" type="text" name="name" id="name" required>
+    <br />
+    <label for="">Project Description</label>
+    <textarea value=""  name="desc" id="desc" cols="30" rows="10" required><%= data.description %>
+    </textarea>
+    <br />
+    <label for="">GitHub Repo Link</label>
+    <input value="<%= data.githubLink %>" type="text" name="githubLink" id="githubLink" required>
+    <br />
+    <label for="">Live Webiste Link</label>
+    <input value="<%= data.liveLink %>" type="text" name="liveLink" id="liveLink">
+    <br />
+    <label for="">Blog Post Link</label>
+    <input value="<%= data.blogLink %>" type="text" name="blogLink" id="blogLink">
+    <br />
+    <label for="">Tags (Seperated by comma)</label>
+    <textarea name="tags" id="tags" cols="30" rows="10" ><%= data.tags %>
+    </textarea>
+    <button type="submit" class="btn btn-secondary">Update</button>
+</form>
+<form action="/projects/<%= data.id %>?_method=DELETE" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+
+    <%- include ('../partials/footer') %> 

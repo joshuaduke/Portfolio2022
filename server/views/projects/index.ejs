@@ -1,0 +1,34 @@
+<%- include ('../partials/header') %> 
+    <main class="container">
+        <h1>Projects List</h1>
+        <a href="/projects/new">New Project</a>
+    
+        <div class="container">
+            <div class="row">
+                <% data.forEach(element => { %>
+                    <div class="col-12 card my-2 py-2">
+                        <h4 class="card-title"> <%= element.title %> </h4>
+                        <p class="card-text"> <%= element.description %> </p>
+                        <a href="<%= element.liveLink%>" target="_blank">Live View</a>
+                        <a href="">GitHub</a>
+                        <a href="">Blog Post</a>
+
+                        <div class="tags">
+                            <% element.tags.forEach(tag => { %>
+                            <a href="/" class="btn btn-primary"> #<%= tag%> </a>
+                            <% }) %>
+                        </div>
+                    <a href="/projects/<%=element._id %>/edit" class="btn btn-success">Edit</a>
+                    </div>
+                   <% }) %>
+            </div>
+        </div>
+    </main>
+
+
+    <%- include ('../partials/footer') %> 
+<!-- 
+    Make each project a link that links to the update Page
+    Use bootstrap to quickly add styles.
+
+-->
