@@ -9,17 +9,17 @@ export default function AchievementItem(props){
     return(
     <TimelineItem>
         <TimelineSeparator>
-            <TimelineDot color={props.color} />
+            <TimelineDot />
             <TimelineConnector />
         </TimelineSeparator>
 
         <TimelineContent>
-            <div className='timelineContainer'>
+            <div className='timelineContainer' >
                 <div className='headerContainer'>
-                    <p>Project</p>
-                    <p>February 21, 2022</p>
+                    <p style={{backgroundColor: props.color}}>{props.title}</p>
+                    <p>{props.date}</p>
                 </div>
-                {props.title}
+                <a href={`${props.link}`}> {props.linkText} </a>
             </div>
         </TimelineContent>
 

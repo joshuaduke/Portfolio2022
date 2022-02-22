@@ -23,7 +23,7 @@ export default function Blog(){
             <h1>Blog Posts</h1>
             {posts.map((post) => {
                 return  (
-                <article>
+                <article key={post._id}>
                     <a href={`/blog/${post._id}`}>
                         <span>{Date(post.createdAt)}</span>
                         <h2>{post.title}</h2>

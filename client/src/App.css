@@ -7,20 +7,6 @@
   margin:0 auto;
 }
 
-/* NAVBAR */
-nav{
-  padding:40px 0 0 0;
-}
-
-ul {
-  list-style-type: none;
-}
-
-li {
-  display: inline;
-  margin: 0 10px ;
-}
-
 /* ABOUT */
 .aboutMe{
   padding:40px 0;
@@ -29,6 +15,10 @@ li {
 .aboutMe h4{
   font-weight:normal;
   margin-bottom: 25px;
+}
+
+.socials{
+  text-align: center;
 }
 
 /* LATEST POSTS */
@@ -60,9 +50,39 @@ article a{
   font-size: 0.7em;
 }
 
+/*  SKILLS */
+.skills{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:5px;
+  grid-row-gap: 15px;
+  text-align: center;
+}
+
+.skills div{
+  background-color: #e4e4e4;
+  max-width:200px;
+  width:100%;
+  padding: 15px 0;
+  margin:0 auto;
+  border-radius: 5px;
+}
+
+.skills p{
+  font-size:.9em;
+}
+
 /* FOOTER */
 footer {
   width: 100%;
   padding:20px;
   text-align: center;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 0.5rem;
+  right: 1rem;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
 }
