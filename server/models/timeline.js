@@ -5,11 +5,18 @@ const timelineSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    color:{
+        type: String,
+        required: true
+    },
     description:{
         type: String
     },
     link: {
         type: String,
+    },
+    linkText: {
+        type:String
     },
     createdAt: {
         type: Date,

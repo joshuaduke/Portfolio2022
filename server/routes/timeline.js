@@ -59,7 +59,9 @@ function saveTimelineandRedirect(path) {
     return async (req, res) =>{
         let timeline = req.timeline
         timeline.tag = req.body.tag
+        timeline.color = req.body.color
         timeline.description = req.body.description
+        timeline.linkText = req.body.linkText
         timeline.link = req.body.viewMore
     
         try {
