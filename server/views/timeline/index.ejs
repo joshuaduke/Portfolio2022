@@ -1,0 +1,27 @@
+<%- include ('../partials/header.ejs') %> 
+    
+    <div class="container">
+        <h1 class="mb-4">List of Achievements </h1>
+        <a href="/timeline/new" class="btn btn-success">New Timeline Item</a>
+
+        <% data.forEach(item => { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-title"><%= item.tag %></h4>
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= item.createdAt.toLocaleDateString() %> 
+                    </div>
+                    <div class="card-text mb-2"><%= item.description %></div>
+                    <a href="/timeline/<%= item.id %>" class="btn btn-primary">Read More</a>
+                    <a href="/timeline/edit/<%= item.id %>" class="btn btn-info">Edit</a>
+                    
+                    <form action="/timeline/<%= item._id %>?_method=DELETE" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+                
+            </div>
+        <% }); %>
+    </div>
+    
+<%- include ('../partials/footer.ejs') %> 

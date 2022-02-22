@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000;
 
 const articleRouter = require('./routes/articles');
 const projectRouter = require('./routes/projects');
+const timelineRouter = require('./routes/timeline');
 
 mongoose.connect('mongodb://localhost:27017/portfolio');
 
@@ -24,6 +25,7 @@ app.get('/', (req, res)=>{
 
 app.use('/articles', articleRouter)
 app.use('/projects', projectRouter)
+app.use('/timeline', timelineRouter)
 
 app.listen(port, ()=>{
     console.log(`Server is listening on port : ${port}`)
