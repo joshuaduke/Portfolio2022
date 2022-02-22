@@ -10,7 +10,6 @@ const port = process.env.PORT || 5000;
 const articleRouter = require('./routes/articles');
 const projectRouter = require('./routes/projects');
 
-
 mongoose.connect('mongodb://localhost:27017/portfolio');
 
 app.set('view engine', 'ejs');
