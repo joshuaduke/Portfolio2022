@@ -20,3 +20,18 @@ export default function Achievements(){
         </>
     )
 }
+
+/*  Timeline data
+    {
+        title: 'Title here',
+        date: 'Date Here',
+        category: {
+            tag: 'somethingHere',
+            color: 'red'
+        },
+        link: {
+            url: 'Url',
+            text: 'read more'
+        }
+    }
+*/

@@ -12,11 +12,17 @@ export default function AchievementItem(props){
             <TimelineDot color={props.color} />
             <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>
-            <p>Date: Sunday February 20th </p>
-            {props.title}
 
+        <TimelineContent>
+            <div className='timelineContainer'>
+                <div className='headerContainer'>
+                    <p>Project</p>
+                    <p>February 21, 2022</p>
+                </div>
+                {props.title}
+            </div>
         </TimelineContent>
+
     </TimelineItem>
     )
 }

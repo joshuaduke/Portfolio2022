@@ -31,8 +31,31 @@ li {
   margin-bottom: 25px;
 }
 
-/* FOOTER */
+/* LATEST POSTS */
+article{
+  box-shadow: 1px 1px 1px #a8a8a8;
+  margin:5px 0;
+  padding: 10px;
+}
 
+article a{
+  width:100%;
+  display: block;
+  color:#000;
+}
+
+/* ACHIEVEMENTS */
+.timelineContainer{
+  /* width: 200px; */
+  border:1px solid #000;
+  text-align: center;
+}
+
+.headerContainer p:nth-of-type(2){
+  font-size: 0.7em;
+}
+
+/* FOOTER */
 footer {
   width: 100%;
   padding:20px;
