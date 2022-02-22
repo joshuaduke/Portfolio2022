@@ -5,19 +5,21 @@ import Navbar from '../components/Navbar';
 import ReactMarkdown from 'react-markdown'
 
 export default function BlogPost(){
-    const [post, setPost] = useState();
+    const [post, setPost] = useState({});
     const { id } = useParams(); 
 
     useEffect(()=>{
         axios.get(`http://localhost:5000/articles/posts/${id}`)
             .then((postData)=>{
+                console.log(postData.data)
                 setPost(postData.data);
+                console.log(post)
             })
             .catch((err)=>{
                 console.log(err);
             })
     }, [])
-
+    
     return(
         <>
             <Navbar />

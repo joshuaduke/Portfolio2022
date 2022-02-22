@@ -1,7 +1,6 @@
 import {useState, useEfect, useEffect} from 'react';
 import axios from "axios"
 import Markdown from 'markdown-to-jsx';
-import ReactMarkdown from 'react-markdown'
 import { marked } from 'marked';
 
 export default function LatestPosts(){
@@ -21,18 +20,18 @@ export default function LatestPosts(){
     return(
         <>
             <h2>Latest Posts</h2>
-            {latestPosts.map((post) => {
+            {latestPosts.slice(0).reverse().map((post) => {
                 return  (
                 <article>
                     <a href={`/blog/${post._id}`}>
-                        <span>{Date(post.createdAt)}</span>
+                        <span>{post.createdAt}</span>
                         <h2>{post.title}</h2>
 
                         <div>
                             {post.description}
                         </div>
                     </a>
-                    {/* <ReactMarkdown children={post.markdown}/>  */}
+
                 </article>)
             })}
         </>
