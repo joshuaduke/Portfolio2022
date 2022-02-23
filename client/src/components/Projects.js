@@ -17,17 +17,22 @@ export default function Projects(){
             })
     }, [])
     return (
-        <section className="project-Container">
-            <h2>Featured Projects</h2>
-            {projects.map((project) => {
-                return  <Project key={project.id} 
-                                name={project.title} 
-                                desc={project.description}
-                                live={project.liveLink}
-                                github={project.githubLink}
-                                blog={project.blogLink}
-                                />
-            })}
+        <section>
+            <h2>Projects</h2>
+            <div className="project-Container">
+                {projects.map((project) => {
+                    return  <Project key={project.id} 
+                                    name={project.title} 
+                                    desc={project.description}
+                                    live={project.liveLink}
+                                    github={project.githubLink}
+                                    blog={project.blogLink}
+                                    tags={project.tags}
+                                    status={project.status}
+                                    />
+                })}
+            </div>
+
 
         </section>
     )

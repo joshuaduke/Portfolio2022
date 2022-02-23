@@ -1,26 +1,41 @@
 /* NAVBAR */
 .desktop-nav{
-    padding:40px 0 0 0;
+    padding:80px 0 0 0;
   }
+
+.desktop-nav li {
+  display: inline;
+  margin: 0 15px ;
+}
+
+.desktop-nav a {
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.desktop-nav a:hover{
+  color:#F44E27;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+li{
+ display: inline;
+  margin: 0 10px ;
+}
   
-  ul {
-    list-style-type: none;
-  }
-  
-  li {
-    display: inline;
-    margin: 0 10px ;
-  }
-  
-  .bm-burger-button{
-    display: none;
-  }
+.bm-burger-button{
+  display: none;
+}
   
   
   /*  MENU PACKAGE */
   /* Position and sizing of burger button */
-  @media only screen and (max-width: 768px) {
-  
+  @media only screen and (max-width: 800px) {
+
     .desktop-nav{
       display: none;
     }
@@ -36,7 +51,7 @@
   
     /* Color/shape of burger icon bars */
     .bm-burger-bars {
-      background: #373a47;
+      background: #F44E27;
     }
     
     /* Color/shape of burger icon bars on hover*/
@@ -62,6 +77,7 @@
     .bm-menu-wrap {
       position: fixed;
       height: 100%;
+      margin-top: -40px;
     }
     
     /* General sidebar styles */
@@ -80,6 +96,9 @@
     .bm-item-list {
       color: #b8b7ad;
       padding: 0.8em;
+      height:auto !important;
+      position: absolute;
+      bottom:0;
     }
     
     /* Individual item */

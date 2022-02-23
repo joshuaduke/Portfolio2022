@@ -4,7 +4,7 @@ import { SiMysql, SiHtml5, SiCss3, SiJavascript, SiMongodb, SiReact, SiNodedotjs
 export default function Skills(){
     const iconSize = '3.5em'
     return(
-        <>
+        <section>
         <h2>Technologies</h2>
         <div className="skills">
             <SkillItem icon={<SiHtml5 
@@ -69,6 +69,6 @@ export default function Skills(){
                         name="Sass"/>
             
         </div>
-        </>
+        </section>
     )
 }

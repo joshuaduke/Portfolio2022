@@ -19,14 +19,15 @@ export default function Achievements(){
     }, [])
 
     return(
-        <>
+        <section>
             <h2>Achievements</h2>
             <Timeline position="alternate">
-            {achievements.slice(0).reverse().map((item) => {
+            {achievements.slice(-5).reverse().map((item) => {
                 return  (
                     <AchievementItem key={item.id} 
                                     title={item.tag} 
-                                    date={item.createdAt} 
+                                    date={item.createdAt}
+                                    desc={item.description}
                                     color={item.color} 
                                     link={item.link}
                                     linkText={item.linkText}
@@ -35,7 +36,12 @@ export default function Achievements(){
             })}
 
             </Timeline>
-        </>
+
+            <div className='viewAll'>
+                <a href="/blog" className='viewAllBtn'>View all </a>
+            </div>
+            
+        </section>
     )
 }
 

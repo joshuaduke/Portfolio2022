@@ -8,6 +8,7 @@ function padTo2Digits(num) {
 
 const helpers = {
     formatDate: function(date){
+      date = new Date(date)
         return [
             padTo2Digits(monthNames[date.getMonth()]),
             padTo2Digits(date.getDate()),

@@ -1,3 +1,10 @@
+:root {
+  --bg-color: #22272D;
+  --text: #F5EDE0;
+  --headers: #BFD7EA;
+  --highlight: #F44E27;
+}
+
 *{
   margin:0;
   padding:0;
@@ -7,6 +14,11 @@
 
 a{
   text-decoration: none;
+  color:#22272D;
+}
+
+h1, h2, h3 {
+  color:#BFD7EA;
 }
 
 h1, h2, h3, h4 {
@@ -14,9 +26,17 @@ h1, h2, h3, h4 {
   font-family: 'Montserrat', sans-serif; 
 }
 
+h2{
+  padding:0  20px;
+}
+
 p, li, a, span {
   /* font-family: 'Montserrat', sans-serif; */
   font-family: 'Roboto', sans-serif; 
+}
+
+p{
+  font-size: 18px;
 }
 
 body {

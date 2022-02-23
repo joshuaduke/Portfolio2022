@@ -7,7 +7,6 @@ export default function Navbar(){
     <>
         <Menu right>
             <a id="home" className="menu-item" href="/">Home</a>
-            <a id="projects" className="menu-item" href="/">Projects</a>
             <a id="blog" className="menu-item" href="/blog">Blog</a>
             <a id="timeline" className="menu-item" href="/timeline">Timeline</a>
             <a id="resume" className="menu-item" href="/">Resume</a>
@@ -16,10 +15,7 @@ export default function Navbar(){
         <nav className='desktop-nav'>
             <ul>
                 <li> 
-                    <a href="/">About</a>  
-                </li>
-                <li> 
-                    <a href="#">Projects</a>  
+                    <a href="/">Home</a>  
                 </li>
                 <li> 
                     <a href="/blog">Blog</a>  
