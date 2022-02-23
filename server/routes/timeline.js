@@ -3,28 +3,20 @@ const router = express.Router();
 const Timeline = require('../models/timeline');
 
 //Retrieve Blog posts for the frontend
-router.get('/items', (req, res)=>{
-    Timeline.find((err, result)=>{
-        try {
-            console.log(result);
-            res.status(200).json(result)
-        } catch (error) {
-            res.status(500).json(err);
-        }
-    })
-})
+router.get('/items', async (req, res)=>{
+    // Timeline.find((err, result)=>{
+    //     try {
+    //         console.log(result);
+    //         res.status(200).json(result)
+    //     } catch (error) {
+    //         res.status(500).json(err);
+    //     }
+    // })
 
-// Retrieve one blog post by Id
-// router.get('/posts/:id', (req, res)=>{
-//     Article.findById(req.params.id, (err, post)=>{
-//         try {
-//             console.log(post);
-//             res.status(200).json(post)
-//         } catch (error) {
-//             res.status(500).json(err);
-//         }
-//     })
-// })
+    const timeline = await Timeline.find().sort({createdAt: 'desc'});
+    res.status(200).json(timeline)
+    
+})
 
 router.get('/', async (req, res)=>{
     const timeline = await Timeline.find().sort({createdAt: 'desc'});

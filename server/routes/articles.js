@@ -3,15 +3,15 @@ const router = express.Router();
 const Article = require('../models/article');
 
 //Retrieve Blog posts for the frontend
-router.get('/posts', (req, res)=>{
-    Article.find((err, posts)=>{
-        try {
-            console.log(posts);
-            res.status(200).json(posts)
-        } catch (error) {
-            res.status(500).json(err);
-        }
-    })
+router.get('/posts', async (req, res)=>{
+    try {
+        const articles = await Article.find().sort({createdAt: 'asc'});
+        res.status(200).json(articles)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+
+
 })
 
 // Retrieve one blog post by Id
@@ -27,8 +27,13 @@ router.get('/posts/:id', (req, res)=>{
 })
 
 router.get('/', async (req, res)=>{
-    const articles = await Article.find().sort({createdAt: 'desc'});
-    res.render('articles/index', {data: articles})
+    try {
+        const articles = await Article.find().sort({createdAt: 'desc'});
+        res.render('articles/index', {data: articles})
+    } catch (error) {
+        res.status(500).json(error);
+    }
+
 })
 
 router.get('/new', (req, res)=>{
