@@ -63,6 +63,7 @@ function saveTimelineandRedirect(path) {
         timeline.description = req.body.description
         timeline.linkText = req.body.linkText
         timeline.link = req.body.viewMore
+        timeline.createdAt = req.body.date
     
         try {
             timeline = await timeline.save();

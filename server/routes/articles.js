@@ -71,6 +71,7 @@ function saveArticleandRedirect(path) {
         article.title = req.body.title
         article.description = req.body.description
         article.markdown = req.body.markdown
+        article.createdAt = req.body.date
     
         try {
             article = await article.save();

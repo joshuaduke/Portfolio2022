@@ -1,32 +1,33 @@
 <%- include ('../partials/header') %> 
-<a href="/projects">View Projects</a>
-<p>add a new project </p>
 
-<form action="/projects/<%= data.id %>?_method=PATCH" method="post">
-    <label for="">Project Name</label>
-    <input value="<%= data.title %>" type="text" name="name" id="name" required>
-    <br />
-    <label for="">Project Description</label>
-    <textarea value=""  name="desc" id="desc" cols="30" rows="10" required><%= data.description %>
-    </textarea>
-    <br />
-    <label for="">GitHub Repo Link</label>
-    <input value="<%= data.githubLink %>" type="text" name="githubLink" id="githubLink" required>
-    <br />
-    <label for="">Live Webiste Link</label>
-    <input value="<%= data.liveLink %>" type="text" name="liveLink" id="liveLink">
-    <br />
-    <label for="">Blog Post Link</label>
-    <input value="<%= data.blogLink %>" type="text" name="blogLink" id="blogLink">
-    <br />
-    <label for="">Tags (Seperated by comma)</label>
-    <textarea name="tags" id="tags" cols="30" rows="10" ><%= data.tags %>
-    </textarea>
-    <button type="submit" class="btn btn-secondary">Update</button>
-</form>
-<form action="/projects/<%= data.id %>?_method=DELETE" method="post">
-    <button type="submit" class="btn btn-danger">Delete</button>
-</form>
+    <div class="container">
+        <a href="/projects">View Projects</a>
+        <h1 class="mb-4"> Edit project </h1>
+        
+        <form action="/projects/<%= data.id %>?_method=PATCH" method="post">
+            <%- include ('./_form_fields.ejs') %> 
+        </form>
+
+        <form action="/projects/<%= data.id %>?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+
+<%- include ('../partials/footer') %> 
 
 
-    <%- include ('../partials/footer') %> 
+<!-- {
+    _id: new ObjectId("6212d386f666c5472c7644c2"),
+    title: 'Super Hero Math Game',
+    description: 'This is a game that I created for children to practice their arithmetic skills\r\n' +
+      '    \r\n' +
+      '    ',
+    liveLink: 'https://joshuaduke.github.io/SuperHeroMathGameV2/',
+    githubLink: 'https://github.com/joshuaduke/SuperHeroMathGameV2',
+    blogLink: '',
+    tags: [ 'javascript', 'html5', 'sass', 'css3\r\n    \r\n    ' ],
+    __v: 0,
+    completed: 'false'
+  }, -->
+
+

@@ -32,7 +32,7 @@ router.get('/', (req, res)=>{
 
 //New
 router.get('/new', (req, res)=>{
-    res.render('projects/new')
+    res.render('projects/new', {data: new Project() })
 })
 
 //Create
@@ -44,10 +44,12 @@ router.post('/', (req, res)=>{
         liveLink: req.body.liveLink,
         githubLink: req.body.githubLink,
         blogLink: req.body.blogLink,
+        status: req.body.verifyCompleted,
         tags: tags
     }
+    console.log(req.body.verifyCompleted)
 
-    console.log(data);
+    // console.log(data);
 
     Project.create(data, (err, project)=>{
         if (err) {
@@ -83,12 +85,19 @@ router.get('/:id/edit', (req, res)=>{
 router.patch('/:id', (req, res)=>{
     const id = req.params.id;
     const tags = (req.body.tags).split(',',);
+    // let status = false;
+
+    // if(req.body.verifyCompleted === 'Completed'){
+    //     status = true;
+    // }
+
     const updatedProject = {
         title: req.body.name,
         description: req.body.desc,
         liveLink: req.body.liveLink,
         githubLink: req.body.githubLink,
         blogLink: req.body.blogLink,
+        status: req.body.verifyCompleted,
         tags: tags
     }
 
