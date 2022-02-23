@@ -18,8 +18,9 @@ const articleSchema = new mongoose.Schema({
         required:true,
     },
     createdAt: {
-        type: Date,
-        default: Date.now
+        type: String,
+        default: (Date.now).toString(),
+        required:true
     },
     slug:{
         type: String,

@@ -19,8 +19,8 @@ const timelineSchema = new mongoose.Schema({
         type:String
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
+        type: String,
+        default: (Date.now).toString(),
         required: true
     }
 })

@@ -13,7 +13,7 @@ router.get('/items', async (req, res)=>{
     //     }
     // })
 
-    const timeline = await Timeline.find().sort({createdAt: 'desc'});
+    const timeline = await Timeline.find().sort({createdAt: 'asc'});
     res.status(200).json(timeline)
     
 })
