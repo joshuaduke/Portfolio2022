@@ -19,14 +19,15 @@
 }
 
 
-ul {
+
+/* ul {
   list-style-type: none;
 }
 
 li{
  display: inline;
   margin: 0 10px ;
-}
+} */
   
 .bm-burger-button{
   display: none;

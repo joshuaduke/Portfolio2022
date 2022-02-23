@@ -30,16 +30,16 @@ h2{
   width:100%;
   display: inline;
   padding:10px 15px;
-  color: var(--headers);
-  background-color:var(--bg-color);
+  color: var(--text);
+  background-color:var(--highlight);
   border-radius: 5px;
   box-shadow: var(--shadow);
   transition: all 0.3s;
 }
 
 .viewAllBtn:hover{
-  color: var(--text);
-  background-color:var(--highlight);
+  color: var(--headers);
+  background-color:var(--bg-color);
 }
 
 /* ABOUT */
@@ -60,6 +60,12 @@ h2{
 
 .socials{
   text-align: center;
+  list-style-type: none;
+}
+
+.socials li, .project-links li{
+  display: inline;
+  margin: 0 10px ;
 }
 
 /* LATEST POSTS */
@@ -167,6 +173,56 @@ footer {
   cursor: pointer;
 }
 
+/* BLOG POST */
+
+.blog-post h1,h2,h3,h4{
+  color: var(--bg-color);
+  padding:10px 0;
+}
+
+.blog-post hr{
+  background-color: var(--bg-color);
+  margin:10px 0;
+}
+
+.blog-post ul{
+  list-style-type: disc;
+  padding:10px 30px;
+}
+
+.blog-post li{
+  padding:5px 0;
+}
+
+.blog-post a{
+  color:var(--highlight);
+  text-decoration: underline;
+}
+
+.blog-project-links a{
+  display: inline-block;
+  padding:5px 10px;
+  border-radius: 5px;
+  font-size: 0.7em;
+  font-weight:bold;
+  margin:0 20px 10px 0;
+  box-shadow: 0 0 1px var(--bg-color);
+  transition: all 0.3s;
+}
+
+.blog-project-links a:hover{
+  background-color: var(--highlight);
+  color: var(--text);
+}
+
+.blog-project-links svg{
+  position: relative;
+  top:1px;
+}
+
+.blog-post pre{
+  border-radius: 5px;
+}
 
 @media only screen and (max-width: 425px) {
   .App {

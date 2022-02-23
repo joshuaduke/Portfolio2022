@@ -2,6 +2,7 @@ import {useEffect , useState} from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
 import helpers from '../script/getDate';
+import Footer from '../components/Footer';
 
 
 export default function Blog(){
@@ -36,6 +37,7 @@ export default function Blog(){
 
                 </article>)
             })}
+            <Footer />
         </>
     )
 }

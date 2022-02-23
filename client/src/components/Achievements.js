@@ -24,7 +24,7 @@ export default function Achievements(){
             <Timeline className='timeline' position="alternate">
             {achievements.slice(-5).map((item) => {
                 return  (
-                    <AchievementItem key={item.id} 
+                    <AchievementItem key={item._id} 
                                     title={item.tag} 
                                     date={item.createdAt}
                                     desc={item.description}

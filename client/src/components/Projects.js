@@ -21,7 +21,8 @@ export default function Projects(){
             <h2>Projects</h2>
             <div className="project-Container">
                 {projects.map((project) => {
-                    return  <Project key={project.id} 
+                    return  <Project key={project._id}
+                                    id={project._id} 
                                     name={project.title} 
                                     desc={project.description}
                                     live={project.liveLink}
