@@ -16,7 +16,7 @@ export default function Project(props){
                     <a href={props.github} target="_blank" rel="noreferrer">Code</a>
                 </li>
                 <li>
-                    <a href={props.blog} target="_blank" rel="noreferrer">Blog</a>
+                    <a href={`blog/${props.blog}`}>Blog</a>
                 </li>
             </ul>
             <p>{props.desc}</p>

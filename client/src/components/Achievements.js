@@ -22,7 +22,7 @@ export default function Achievements(){
         <section>
             <h2>Achievements</h2>
             <Timeline className='timeline' position="alternate">
-            {achievements.slice(-5).map((item) => {
+            {achievements.slice(-5).reverse().map((item) => {
                 return  (
                     <AchievementItem key={item._id} 
                                     title={item.tag} 

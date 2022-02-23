@@ -175,7 +175,10 @@ footer {
 
 /* BLOG POST */
 
-.blog-post h1,h2,h3,h4{
+.blog-post h1, 
+.blog-post h2,
+.blog-post h3,
+.blog-post h4{
   color: var(--bg-color);
   padding:10px 0;
 }
