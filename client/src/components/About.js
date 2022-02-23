@@ -13,22 +13,22 @@ export default function About(){
         <p style={{textAlign: 'center'}}>Contact Me <a href="mailto:joshuadukedev@gmail.com" style={{color: '#F44E27'}}>Here!</a> </p>
         <br />
         <ul className="socials">
-                    <li>
-                        <a href="https://www.instagram.com/joshuaduke97/" rel="noreferrer" target={'_blank'}>
-                           <FaInstagramSquare color={'#BFD7EA'} size={iconSize}/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/joshua-duke/" rel="noreferrer" target={'_blank'}>
-                            <FaLinkedin color={'#BFD7EA'} size={iconSize}/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/joshuaduke" rel="noreferrer" target={'_blank'}>
-                        <FaGithubSquare color={'#BFD7EA'} size={iconSize}/>
-                        </a>
-                    </li>
-                </ul>
+            <li>
+                <a href="https://www.instagram.com/joshuaduke97/" rel="noreferrer" target={'_blank'}>
+                   <FaInstagramSquare color={'#BFD7EA'} size={iconSize}/>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/joshua-duke/" rel="noreferrer" target={'_blank'}>
+                    <FaLinkedin color={'#BFD7EA'} size={iconSize}/>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/joshuaduke" rel="noreferrer" target={'_blank'}>
+                <FaGithubSquare color={'#BFD7EA'} size={iconSize}/>
+                </a>
+            </li>
+        </ul>
     </section>        
     )
 }

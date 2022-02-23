@@ -11,7 +11,7 @@ const helpers = {
       date = new Date(date)
         return [
             padTo2Digits(monthNames[date.getMonth()]),
-            padTo2Digits(date.getDate()),
+            padTo2Digits(date.getDate() +1),
             date.getFullYear()
           ].join(' ');
     }

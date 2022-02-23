@@ -21,8 +21,8 @@ export default function Achievements(){
     return(
         <section>
             <h2>Achievements</h2>
-            <Timeline position="alternate">
-            {achievements.slice(-5).reverse().map((item) => {
+            <Timeline className='timeline' position="alternate">
+            {achievements.slice(-5).map((item) => {
                 return  (
                     <AchievementItem key={item.id} 
                                     title={item.tag} 
@@ -38,7 +38,7 @@ export default function Achievements(){
             </Timeline>
 
             <div className='viewAll'>
-                <a href="/blog" className='viewAllBtn'>View all </a>
+                <a href="/timeline" className='viewAllBtn'>View all </a>
             </div>
             
         </section>

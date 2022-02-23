@@ -3,7 +3,7 @@ import './App.css';
 import Blog from  './pages/Blog';
 import BlogPost from './pages/BlogPost'
 import Home from './pages/Home';
-import Timeline from './pages/Timeline';
+import TimelinePage from './pages/TimelinePage';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/blog' element={<Blog />}/>
         <Route path='/blog/:id' element={<BlogPost />}/>
-        <Route path='/timeline' element={<Timeline />}/>
+        <Route path='/timeline' element={<TimelinePage />}/>
       </Routes>
     </BrowserRouter>
 

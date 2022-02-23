@@ -93,6 +93,11 @@ article h4{
 
 /* ACHIEVEMENTS */
 
+.timeline-description h2{
+  margin-top: 40px;
+  font-size: 1.6em;
+}
+
 .timelineContainer{
   /* max-width: 340px;
   width: 100%; */
@@ -113,10 +118,6 @@ article h4{
 
 .timeline-header{
   color:var(--text);
-}
-
-.seperator{
-  color: red;
 }
 
 .headerContainer p:nth-of-type(2){
@@ -154,7 +155,7 @@ article h4{
 /* FOOTER */
 footer {
   width: 100%;
-  padding:20px;
+  padding:40px 0;
   text-align: center;
 }
 
@@ -164,6 +165,37 @@ footer {
   right: 1rem;
   animation: fadeIn 700ms ease-in-out 1s both;
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 425px) {
+  .App {
+    width: 100%;
+    padding:0 10px;
+    margin:0 auto;
+  }
+
+  .timeline-desc{
+    font-size: 14px;
+  }
+  
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .timeline{
+    padding:0 !important;
+  }
+
+  .timeline-item{
+    margin: 0 !important; 
+  }
+
+  .timeline-content{
+    /* padding:0 !important; */
+  }
+
 }
 
 @media only screen and (min-width: 1024px) {

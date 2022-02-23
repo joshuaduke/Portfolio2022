@@ -1,6 +1,7 @@
 import {useEffect , useState} from 'react';
 import axios from 'axios';
 import Navbar from '../components/Navbar';
+import helpers from '../script/getDate';
 
 
 export default function Blog(){
@@ -20,13 +21,13 @@ export default function Blog(){
     return(
         <>
             <Navbar />
-            <h1>Blog Posts</h1>
-            {posts.map((post) => {
+            <h2 style={{margin: '40px 0', fontSize: '1.6em'}}>Blog Posts</h2>
+            {posts.slice(0).reverse().map((post) => {
                 return  (
                 <article key={post._id}>
                     <a href={`/blog/${post._id}`}>
-                        <span>{Date(post.createdAt)}</span>
-                        <h2>{post.title}</h2>
+                        <span>{helpers.formatDate(post.createdAt)}</span>
+                        <h4>{post.title}</h4>
 
                         <div>
                             {post.description}

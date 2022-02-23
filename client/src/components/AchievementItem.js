@@ -8,20 +8,20 @@ import helpers from '../script/getDate';
 
 export default function AchievementItem(props){
     return(
-    <TimelineItem>
-        <TimelineSeparator className='seperator'>
+    <TimelineItem className='timeline-item'>
+        <TimelineSeparator>
             <TimelineDot variant='outlined'/>
             <TimelineConnector />
         </TimelineSeparator>
 
-        <TimelineContent>
+        <TimelineContent className='timeline-content'>
             <div className='timelineContainer' >
                 <div className='headerContainer'>
                     <p className='timeline-header' style={{backgroundColor: props.color}}>{props.title}</p>
                     <p>{helpers.formatDate(props.date)}</p>
                 </div>
-                <p>{props.desc}</p>
-                <a href={`${props.link}`}> {props.linkText} </a>
+                <p className='timeline-desc'>{props.desc}</p>
+                <a href={`${props.link}`} target="_blank" rel="noreferrer"> {props.linkText} </a>
             </div>
         </TimelineContent>
 
