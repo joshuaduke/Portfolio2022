@@ -9,7 +9,7 @@ export default function Blog(){
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
-        axios.get('/articles/posts')
+        axios.get('https://jedportfoliodb2022.herokuapp.com/articles/posts')
         .then((allPosts)=>{
             console.log(allPosts.data);
             setPosts(allPosts.data)

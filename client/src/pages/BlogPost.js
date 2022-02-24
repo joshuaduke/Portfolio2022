@@ -18,11 +18,11 @@ export default function BlogPost(){
 
     const sendRequests = async () =>{
         try {
-            const selectedPost = await axios.get(`/articles/posts/${id}`);
+            const selectedPost = await axios.get(`https://jedportfoliodb2022.herokuapp.com/articles/posts/${id}`);
             console.log('Post', selectedPost)
             setPost(selectedPost.data)
 
-            const selectedProject = await axios.get(`/projects/${id}`);
+            const selectedProject = await axios.get(`https://jedportfoliodb2022.herokuapp.com/projects/${id}`);
             console.log('Project', selectedProject)
             
             if(selectedProject.data === null){

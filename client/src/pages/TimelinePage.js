@@ -9,7 +9,7 @@ export default function TimelinePage(){
     const [timeline, setTimeline] = useState([]);
 
     useEffect(()=>{
-        axios.get('/timeline/items')
+        axios.get('https://jedportfoliodb2022.herokuapp.com/timeline/items')
             .then((result)=>{
                 setTimeline(result.data);
             })
