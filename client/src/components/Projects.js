@@ -6,7 +6,7 @@ import './project.css';
 export default function Projects(){
     const [projects, setProjects] = useState([]);
     useEffect(()=>{
-        axios.get('/projects/list')
+        axios.get('https://jedportfoliodb2022.herokuapp.com/projects/list')
             .then((allProjects)=>{
                 console.log('All Projects:', allProjects.data)
                 setProjects(allProjects.data);

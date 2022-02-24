@@ -6,7 +6,7 @@ export default function LatestPosts(){
     const [latestPosts, setLatestPosts] = useState([]);
     
     useEffect(()=>{
-        axios.get('/articles/posts')
+        axios.get('https://jedportfoliodb2022.herokuapp.com/articles/posts')
             .then((posts)=>{
                 console.log(posts.data);
                 setLatestPosts(posts.data)

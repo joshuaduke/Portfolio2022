@@ -9,7 +9,7 @@ export default function Achievements(){
     const [achievements, setAchievements] = useState([]);
 
     useEffect(()=>{
-        axios.get(`/timeline/items`)
+        axios.get(`https://jedportfoliodb2022.herokuapp.com/timeline/items`)
         .then((result)=>{
             setAchievements(result.data);
         })
