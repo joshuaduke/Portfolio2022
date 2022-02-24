@@ -16,6 +16,16 @@ router.get('/list', (req, res)=>{
     })
 })
 
+router.get('/:blogId', async (req, res)=>{
+    try {
+        const project = await Project.findOne({blogLink: req.params.blogId});
+        res.status(200).json(project);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+
+})
+
 //Index
 router.get('/', (req, res)=>{
     Project.find((err, projects)=>{
