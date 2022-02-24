@@ -9,7 +9,7 @@ export default function Blog(){
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/articles/posts')
+        axios.get('/articles/posts')
         .then((allPosts)=>{
             console.log(allPosts.data);
             setPosts(allPosts.data)

@@ -6,7 +6,7 @@ export default function LatestPosts(){
     const [latestPosts, setLatestPosts] = useState([]);
     
     useEffect(()=>{
-        axios.get('http://localhost:5000/articles/posts')
+        axios.get('/articles/posts')
             .then((posts)=>{
                 console.log(posts.data);
                 setLatestPosts(posts.data)

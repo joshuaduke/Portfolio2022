@@ -6,7 +6,7 @@ import './project.css';
 export default function Projects(){
     const [projects, setProjects] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:5000/projects/list')
+        axios.get('/projects/list')
             .then((allProjects)=>{
                 console.log('All Projects:', allProjects.data)
                 setProjects(allProjects.data);

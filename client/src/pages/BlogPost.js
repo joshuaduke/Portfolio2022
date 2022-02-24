@@ -18,11 +18,11 @@ export default function BlogPost(){
 
     const sendRequests = async () =>{
         try {
-            const selectedPost = await axios.get(`http://localhost:5000/articles/posts/${id}`);
+            const selectedPost = await axios.get(`/articles/posts/${id}`);
             console.log('Post', selectedPost)
             setPost(selectedPost.data)
 
-            const selectedProject = await axios.get(`http://localhost:5000/projects/${id}`);
+            const selectedProject = await axios.get(`/projects/${id}`);
             console.log('Project', selectedProject)
             
             if(selectedProject.data === null){
@@ -89,13 +89,3 @@ export default function BlogPost(){
         </>
     )
 }
-
-// axios.get(`http://localhost:5000/articles/posts/${id}`)
-// .then((postData)=>{
-//     console.log(postData.data)
-//     setPost(postData.data);
-//     console.log(post)
-// })
-// .catch((err)=>{
-//     console.log(err);
-// })

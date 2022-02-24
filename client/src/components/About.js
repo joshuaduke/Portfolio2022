@@ -7,7 +7,7 @@ export default function About(){
         <h1>Joshua Duke</h1>
         <h4>Full Stack Developer</h4>
         <p>
-            I am a Computer programming and Analysis Graduate from Seneca College. My most recent experience was as a Junior web Developer at TDSB. I also freelance and develope websites for small businesses. My preferred technologies are React, mongoDB, javascript, Node.js
+            <em>Hello there</em>, I am a Computer programming and Analysis Graduate from Seneca College. My most recent experience was at TDSB as a Junior web Developer where I helped audit and fix web accessibility issues on over 500 web pages. I enjoy learning new technologies but my preferred stack is <em style={{color: '#F44E27'}}>MERN</em> (mongoDB, Express, React, Node.js)
         </p>
         <br/> 
         <p style={{textAlign: 'center'}}>Contact Me <a href="mailto:joshuadukedev@gmail.com" style={{color: '#F44E27'}}>Here!</a> </p>

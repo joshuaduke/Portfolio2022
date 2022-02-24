@@ -9,7 +9,7 @@ export default function TimelinePage(){
     const [timeline, setTimeline] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/timeline/items')
+        axios.get('/timeline/items')
             .then((result)=>{
                 setTimeline(result.data);
             })

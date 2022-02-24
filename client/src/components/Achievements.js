@@ -9,7 +9,7 @@ export default function Achievements(){
     const [achievements, setAchievements] = useState([]);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/timeline/items`)
+        axios.get(`/timeline/items`)
         .then((result)=>{
             setAchievements(result.data);
         })
