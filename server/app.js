@@ -5,13 +5,17 @@ const cors = require('cors');
 const ejs = require('ejs');
 const methodOverride = require('method-override');
 const app = express();
-const port = process.env.PORT || 5000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+    port = 5000;
+  }
 
 const articleRouter = require('./routes/articles');
 const projectRouter = require('./routes/projects');
 const timelineRouter = require('./routes/timeline');
 
 mongoose.connect('mongodb://localhost:27017/portfolio');
+// mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.nt3rk.mongodb.net/portfolioDB`);
 
 app.set('view engine', 'ejs');
 app.use(cors());
