@@ -183,6 +183,10 @@ footer {
   padding:10px 0;
 }
 
+.blog-post code{
+  color:#E167A1;
+}
+
 .blog-post hr{
   background-color: var(--bg-color);
   margin:10px 0;

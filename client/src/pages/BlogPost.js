@@ -11,21 +11,33 @@ import { FaGithub, FaLaptopCode } from "react-icons/fa";
 
 export default function BlogPost(){
     const [post, setPost] = useState({});
+    const [project, setProject] = useState({});
     const { id } = useParams(); 
 
     //make another axios request to fetch the matching blog ID from the projects database. Use that id to fecth the github and live demo links in order to use on this site.
 
-    useEffect(()=>{
-        axios.get(`http://localhost:5000/articles/posts/${id}`)
-        .then((postData)=>{
-            console.log(postData.data)
-            setPost(postData.data);
-            console.log(post)
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+    const sendRequests = async () =>{
+        try {
+            const selectedPost = await axios.get(`http://localhost:5000/articles/posts/${id}`);
+            console.log('Post', selectedPost)
+            setPost(selectedPost.data)
 
+            const selectedProject = await axios.get(`http://localhost:5000/projects/${id}`);
+            console.log('Project', selectedProject)
+            
+            if(selectedProject.data === null){
+                setProject({})
+            } else {
+                setProject(selectedProject.data)
+            }
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(()=>{
+        sendRequests();
     }, []);
 
 
@@ -33,18 +45,19 @@ export default function BlogPost(){
     return(
         <>
             <Navbar />
-
             <div >
                 <h2 style={{marginTop: '40px'}}>{post.title}</h2>
                 <h4> {post.createdAt ? helpers.formatDate(post.createdAt) : 'Loading...'} </h4>
 
                 <div className='blog-project-links'>
-                    <a href='/'><FaGithub/> SOURCE</a>
-                    <a href='/'><FaLaptopCode/> DEMO</a>
+
+                    <a href={project.githubLink === '' ? '#' : project.githubLink} rel="noreferrer" target="_blank"><FaGithub/> SOURCE</a>
+
+                    <a href={project.liveLink} rel="noreferrer" target="_blank"><FaLaptopCode/> DEMO</a>
                 </div>
 
                 <div className='blog-post-desc'>
-                    {post.description}
+                    <span>{post.description}</span>
                 </div>
                 <div className='blog-post'>
 
@@ -77,3 +90,12 @@ export default function BlogPost(){
     )
 }
 
+// axios.get(`http://localhost:5000/articles/posts/${id}`)
+// .then((postData)=>{
+//     console.log(postData.data)
+//     setPost(postData.data);
+//     console.log(post)
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })

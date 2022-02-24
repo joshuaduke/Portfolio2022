@@ -27,7 +27,7 @@ export default function TimelinePage(){
             </div>
 
             <Timeline className='timeline' position="alternate">
-                {timeline.map((item) => {
+                {timeline.slice(0).reverse().map((item) => {
                     return  (
                         <AchievementItem key={item._id} 
                                         title={item.tag} 

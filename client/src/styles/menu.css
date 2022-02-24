@@ -107,6 +107,11 @@ li{
     .bm-item {
       display: inline-block;
       color: #fff;
+      transition: all 0.3s;
+    }
+
+    .bm-item:hover{
+      color: #F44E27;
     }
     
     /* Styling of overlay */
