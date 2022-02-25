@@ -14,8 +14,8 @@ const articleRouter = require('./routes/articles');
 const projectRouter = require('./routes/projects');
 const timelineRouter = require('./routes/timeline');
 
-mongoose.connect('mongodb://localhost:27017/portfolio');
-// mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.nt3rk.mongodb.net/portfolioDB`);
+// mongoose.connect('mongodb://localhost:27017/portfolio');
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.nt3rk.mongodb.net/portfolioDB`);
 
 app.set('view engine', 'ejs');
 app.use(cors());

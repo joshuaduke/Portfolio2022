@@ -4,18 +4,13 @@ const Timeline = require('../models/timeline');
 
 //Retrieve Blog posts for the frontend
 router.get('/items', async (req, res)=>{
-    // Timeline.find((err, result)=>{
-    //     try {
-    //         console.log(result);
-    //         res.status(200).json(result)
-    //     } catch (error) {
-    //         res.status(500).json(err);
-    //     }
-    // })
 
-    const timeline = await Timeline.find().sort({createdAt: 'asc'});
-    res.status(200).json(timeline)
-    
+    try {
+        const timeline = await Timeline.find().sort({createdAt: 'asc'});
+        res.status(200).json(timeline)
+    } catch (error) {
+        res.status(500).json(error);
+    }
 })
 
 router.get('/', async (req, res)=>{

@@ -28,16 +28,24 @@ router.get('/:blogId', async (req, res)=>{
 
 //Index
 router.get('/', (req, res)=>{
-    Project.find((err, projects)=>{
-        if(err) {
-            res.send({message: 'Error finding projects'})
-        }
-        if(projects.length > 0){
-            console.log(projects);
-            res.render('projects/index', {data : projects})
-        }  
-    })
+
+    try {
+        const projects = await Project.find();
+        res.render('projects/index', {data: projects})
+    } catch (error) {
+        res.status(500).json(error);
+    }
+
     
+    // Project.find((err, projects)=>{
+    //     if(err) {
+    //         res.send({message: 'Error finding projects'})
+    //     }
+    //     if(projects.length > 0){
+    //         console.log(projects);
+    //         res.render('projects/index', {data : projects})
+    //     }  
+    // })
 })
 
 //New
