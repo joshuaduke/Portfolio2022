@@ -54,7 +54,7 @@ router.get('/new', (req, res)=>{
 })
 
 //Create
-router.post('/', async (req, res)=>{
+router.post('/', async (req, res, next)=>{
     req.project = new Project();
     next();
 }, saveProjectandRedirect('new'));
