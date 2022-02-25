@@ -60,7 +60,7 @@ router.post('/', async (req, res, next)=>{
 }, saveProjectandRedirect('new'));
 
 //Edit
-router.get('/edit/:id/', (req, res)=>{
+router.get('/:id/edit', (req, res)=>{
     const id = req.params.id;
 
     Project.findById(id, (err, project)=>{
@@ -78,7 +78,7 @@ router.get('/edit/:id/', (req, res)=>{
 })
 
 //Update
-router.patch('/:id', async (req, res)=>{
+router.patch('/:id', async (req, res, next)=>{
     req.project = await Project.findById(req.params.id);
     next();
 }, saveProjectandRedirect('edit'))

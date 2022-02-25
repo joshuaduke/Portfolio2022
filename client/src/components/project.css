@@ -81,6 +81,5 @@ h3{
 /* Project Container */
 .project-Container{
     width: 100%;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
+    margin:0 auto;
 }
