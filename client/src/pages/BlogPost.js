@@ -22,7 +22,7 @@ export default function BlogPost(){
             console.log('Post', selectedPost)
             setPost(selectedPost.data)
 
-            const selectedProject = await axios.get(`https://jedportfoliodb2022.herokuapp.com/projects/${id}`);
+            const selectedProject = await axios.get(`https://jedportfoliodb2022.herokuapp.com/projects/blog/${id}`);
             console.log('Project', selectedProject)
             
             if(selectedProject.data === null){

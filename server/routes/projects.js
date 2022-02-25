@@ -16,7 +16,7 @@ router.get('/list', (req, res)=>{
     })
 })
 
-router.get('/:blogId', async (req, res)=>{
+router.get('/blog/:blogId', async (req, res)=>{
     try {
         const project = await Project.findOne({blogLink: req.params.blogId});
         res.status(200).json(project);
@@ -27,7 +27,7 @@ router.get('/:blogId', async (req, res)=>{
 })
 
 //Index
-router.get('/', (req, res)=>{
+router.get('/', async (req, res)=>{
 
     try {
         const projects = await Project.find();
@@ -54,35 +54,13 @@ router.get('/new', (req, res)=>{
 })
 
 //Create
-router.post('/', (req, res)=>{
-    const tags = (req.body.tags).split(',',);
-    const data = {
-        title: req.body.name,
-        description: req.body.desc,
-        liveLink: req.body.liveLink,
-        githubLink: req.body.githubLink,
-        blogLink: req.body.blogLink,
-        status: req.body.verifyCompleted,
-        tags: tags
-    }
-    console.log(req.body.verifyCompleted)
-
-    // console.log(data);
-
-    Project.create(data, (err, project)=>{
-        if (err) {
-            console.log(err);
-            res.send({message: err})
-        } else {
-            console.log('Project has been created')
-            res.redirect('/projects')
-        }
-        
-    })
-});
+router.post('/', async (req, res)=>{
+    req.project = new Project();
+    next();
+}, saveProjectandRedirect('new'));
 
 //Edit
-router.get('/:id/edit', (req, res)=>{
+router.get('/edit/:id/', (req, res)=>{
     const id = req.params.id;
 
     Project.findById(id, (err, project)=>{
@@ -100,31 +78,10 @@ router.get('/:id/edit', (req, res)=>{
 })
 
 //Update
-router.patch('/:id', (req, res)=>{
-    const id = req.params.id;
-    const tags = (req.body.tags).split(',',);
-    // let status = false;
-
-    // if(req.body.verifyCompleted === 'Completed'){
-    //     status = true;
-    // }
-
-    const updatedProject = {
-        title: req.body.name,
-        description: req.body.desc,
-        liveLink: req.body.liveLink,
-        githubLink: req.body.githubLink,
-        blogLink: req.body.blogLink,
-        status: req.body.verifyCompleted,
-        tags: tags
-    }
-
-    Project.findByIdAndUpdate(id, updatedProject,(err, result)=>{
-        if(err) throw err;
-        console.log('Project has been updated');
-        res.redirect('/projects')
-    })
-})
+router.patch('/:id', async (req, res)=>{
+    req.project = await Project.findById(req.params.id);
+    next();
+}, saveProjectandRedirect('edit'))
 
 //Delete
 router.delete('/:id', (req, res)=>{
@@ -136,5 +93,28 @@ router.delete('/:id', (req, res)=>{
         res.redirect('/projects')
     })
 })
+
+function saveProjectandRedirect(path) {
+    return async (req, res) =>{
+        const tags = (req.body.tags).split(',');
+        let project = req.project
+        project.title= req.body.name,  
+        project.description= req.body.desc,
+        project.liveLink= req.body.liveLink,
+        project.githubLink= req.body.githubLink,
+        project.blogLink= req.body.blogLink,
+        project.status= req.body.verifyCompleted,
+        project.tags= tags
+    
+        try {
+            project = await project.save();
+            res.redirect(`/projects`);
+        } catch (error) {
+            console.log(error);
+            res.render(`projects/${path}`, {data: project})
+        }
+        
+    }
+}
 
 module.exports = router

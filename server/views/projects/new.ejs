@@ -1,12 +1,13 @@
-<%- include ('../partials/header') %> 
-<div class="container">
-    <a href="/projects">View Projects</a>
-    <h1 class="mb-4"> Edit project </h1>
-    
-    <form action="/projects" method="post">
-        <%- include ('./_form_fields.ejs') %> 
-    </form>
+<%- include ('../partials/header.ejs') %> 
 
-</div>
+    <div class="container">
+        <a href="/projects">View Projects</a>
+        <h1 class="mb-4">New Project </h1>
+        
+        <form action="/projects" method="post">
+            <%- include ('./_form_fields.ejs') %> 
+        </form>
 
-    <%- include ('../partials/footer') %> 
+    </div>
+
+<%- include ('../partials/footer.ejs') %> 
