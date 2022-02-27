@@ -8,15 +8,15 @@ export default function Project(props){
             </h3>
             <hr />       
 
-            <ul className='project-links'>
+            <ul className='project-links-container'>
                 <li>
-                    <a href={props.live} target="_blank" rel="noreferrer">Live</a>
+                    <a className='project-links' href={props.live} target="_blank" rel="noreferrer">Live</a>
                 </li>
                 <li>
-                    <a href={props.github} target="_blank" rel="noreferrer">Code</a>
+                    <a className='project-links' href={props.github} target="_blank" rel="noreferrer">Code</a>
                 </li>
                 <li>
-                    <a href={`blog/${props.blog}`}>Blog</a>
+                    {props.blog === "" ? <button className='disabled-link'>Blog</button> : <a className='project-links' href={`blog/${props.blog}`}>Blog</a>}
                 </li>
             </ul>
             <p>{props.desc}</p>

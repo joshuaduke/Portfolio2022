@@ -40,21 +40,36 @@ h3{
     color: #000;
 }
 
-.project-links{
+.project-links-container{
     text-align: center;
     margin:10px 0;
 }
 
-.project-links a{
+.project-links-container a{
     display: inline-block;
     border: 1px solid var(--headers);
-    color: var(--headers);
     padding:3px 10px;
     border-radius: 5px;
+    color: var(--headers);
+}
+
+.project-links{
     transition: all 0.3s;
 }
 
-.project-links a:hover{
+.disabled-link{
+    cursor: not-allowed;
+    display: inline-block;
+    border: 1px solid var(--headers);
+    padding:3px 13px;
+    font-size: 1.01em;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--headers);
+    text-decoration: line-through;
+}
+
+.project-links:hover{
     background-color: var(--highlight);
     color:var(--text);
 }
