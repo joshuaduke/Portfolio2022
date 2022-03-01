@@ -7,11 +7,11 @@ import TimelinePage from './pages/TimelinePage';
 import ReactGa from 'react-ga';
 import RouteChangeTracker from './components/RouteChangeTracker';
 
-const TRACKING_ID ='G-EV40H3ZX9M';
-ReactGa.initialize(TRACKING_ID);
-ReactGa.pageview(window.location.pathname + window.location.search);
-
 function App() {
+
+  const TRACKING_ID ='G-EV40H3ZX9M';
+  ReactGa.initialize(TRACKING_ID);
+  ReactGa.pageview(window.location.pathname + window.location.search);
 
   return (
     <div className="App">
