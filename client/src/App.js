@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom'
 import './App.css';
 import Blog from  './pages/Blog';
 import BlogPost from './pages/BlogPost'
@@ -22,6 +22,7 @@ function App() {
           <Route path='/blog' element={<Blog />}/>
           <Route path='/blog/:id' element={<BlogPost />}/>
           <Route path='/timeline' element={<TimelinePage />}/>
+          <Route path='*'  element={<Navigate to='/' replace /> } />
         </Routes>
       </BrowserRouter>
     </div>
