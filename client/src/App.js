@@ -4,6 +4,7 @@ import Blog from  './pages/Blog';
 import BlogPost from './pages/BlogPost'
 import Home from './pages/Home';
 import TimelinePage from './pages/TimelinePage';
+import SignIn from './pages/SignIn';
 import ReactGa from 'react-ga';
 import RouteChangeTracker from './components/RouteChangeTracker';
 
@@ -22,6 +23,8 @@ function App() {
           <Route path='/blog' element={<Blog />}/>
           <Route path='/blog/:id' element={<BlogPost />}/>
           <Route path='/timeline' element={<TimelinePage />}/>
+          <Route path='/signin' element={<SignIn />}/>
+
           <Route path='*'  element={<Navigate to='/' replace /> } />
         </Routes>
       </BrowserRouter>
