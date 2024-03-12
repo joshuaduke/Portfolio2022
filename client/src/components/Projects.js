@@ -1,28 +1,41 @@
 import { useState, useEffect} from 'react';
-import axios from  'axios';
 import Project from "./Project"
 import './project.css';
+import { db } from "../config/firebase-config";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 export default function Projects(){
     const [projects, setProjects] = useState([]);
+    const projectCollectionRef =  collection(db, "projects");
     useEffect(()=>{
-        axios.get('https://jedportfoliodb2022.herokuapp.com/projects/list')
-            .then((allProjects)=>{
-                console.log('All Projects:', allProjects.data)
-                setProjects(allProjects.data);
-                console.log(projects)
-            })
-            .catch((err)=>{
-                console.log(err);
-            })
+        const getProjects = async () => {
+            try {
+      
+              const data = await getDocs(projectCollectionRef);
+              console.log("Data", data);
+              const filteredData = data.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+              }));
+
+              console.log("Filtered Data", filteredData)
+              setProjects(filteredData)
+            }
+            catch (error) {
+                console.error(error)
+            }
+        }
+
+        getProjects();
     }, [])
     return (
         <section>
             <h2>Projects</h2>
             <div className="project-Container">
                 {projects.map((project) => {
-                    return  <Project key={project._id}
-                                    id={project._id} 
+                    return  (
+                        <Project key={project.id}
+                                    id={project.id} 
                                     name={project.title} 
                                     desc={project.description}
                                     live={project.liveLink}
@@ -31,6 +44,7 @@ export default function Projects(){
                                     tags={project.tags}
                                     status={project.status}
                                     />
+                    )
                 })}
             </div>
 

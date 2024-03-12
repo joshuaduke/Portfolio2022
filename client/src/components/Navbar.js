@@ -7,7 +7,7 @@ export default function Navbar(){
     <>
         <Menu right>
             <a id="home" className="menu-item" href="/">Home</a>
-            <a id="blog" className="menu-item" href="/blog">Blog</a>
+            {/* <a id="blog" className="menu-item" href="/blog">Blog</a> */}
             <a id="timeline" className="menu-item" href="/timeline">Timeline</a>
             <a id="resume" className="menu-item" href="/">Resume</a>
         </Menu>
@@ -17,9 +17,9 @@ export default function Navbar(){
                 <li> 
                     <a href="/">Home</a>  
                 </li>
-                <li> 
+                {/* <li> 
                     <a href="/blog">Blog</a>  
-                </li>
+                </li> */}
                 <li> 
                     <a href="/timeline">Timeline</a>  
                 </li>
@@ -41,9 +41,9 @@ export default function Navbar(){
     <li> 
         <a href="#">Projects</a>  
     </li>
-    <li> 
+    {/* <li> 
         <a href="/blog">Blog</a>  
-    </li>
+    </li> */}
     <li> 
         <a href="/timeline">Timeline</a>  
     </li>

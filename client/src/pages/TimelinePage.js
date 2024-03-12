@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import Timeline from '@mui/lab/Timeline';
 import AchievementItem from '../components/AchievementItem';
 import Navbar from "../components/Navbar";
@@ -39,15 +38,6 @@ export default function TimelinePage(){
 
         getTimelines();
     }, [])
-    // useEffect(()=>{
-    //     axios.get('https://jedportfoliodb2022.herokuapp.com/timeline/items')
-    //         .then((result)=>{
-    //             setTimeline(result.data);
-    //         })
-    //         .catch((err) => {
-    //             if(err) throw err;
-    //         })
-    // }, [])
 
     console.log("Timeline Data", timeline)
     

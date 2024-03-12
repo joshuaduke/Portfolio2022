@@ -15,13 +15,13 @@ export default function Project(props){
                 <li>
                     <a className='project-links' href={props.github} target="_blank" rel="noreferrer">Code</a>
                 </li>
-                <li>
+                {/* <li>
                     {props.blog === "" ? <button className='disabled-link'>Blog</button> : <a className='project-links' href={`blog/${props.blog}`}>Blog</a>}
-                </li>
+                </li> */}
             </ul>
             <p>{props.desc}</p>
 
-            <div className='tags'>{props.tags.map((tag)=>{
+            <div className='tags'>{props.tags?.map((tag)=>{
                 return <span key={tag}>#{tag} </span>
             })}</div>
         </div>

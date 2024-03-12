@@ -12,7 +12,7 @@ export default function Home(){
             <Navbar/>
             <About/>
             <Projects />
-            <LatestPosts />
+            {/* <LatestPosts /> */}
             <Achievements /> 
             <Skills />
             <Footer />
