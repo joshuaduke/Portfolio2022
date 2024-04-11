@@ -24,7 +24,7 @@ export default function Navbar(){
                     <a href="/timeline">Timeline</a>  
                 </li>
                 <li> 
-                    <a href="/resume/joshuaduke.pdf" rel="noreferrer" target={'_blank'}>Resume</a>  
+                    <a href="/resume/joshuaDukeResume_2024.pdf" rel="noreferrer" target={'_blank'}>Resume</a>  
                 </li>
             </ul>
         </nav>

@@ -22,7 +22,7 @@ export default function Project(props){
             <p>{props.desc}</p>
 
             <div className='tags'>{props.tags?.map((tag)=>{
-                return <span key={tag}>#{tag} </span>
+                return <span key={tag} style={{color: '#F44E27'}}>#{tag} </span>
             })}</div>
         </div>
     )
